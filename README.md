@@ -20,21 +20,22 @@ Runs the app. You should see it in the emulator<br />
 
 ## Screenshots
 
-![App Start Screen](/screenshots/Screenshot_2020-09-10-02-50-37-508_com.rickandmortyrn.jpg)
+<p align="center">
+  <img alt="Start Screen" src="/screenshots/Screenshot_2020-09-10-02-50-37-508_com.rickandmortyrn.jpg"  width="300"/>
+</p>  
 
 <p align="center">
-  <img src="/screenshots/Screenshot_2020-09-10-02-50-59-435_com.rickandmortyrn.jpg" width="300">
-  <img src="/screenshots/Screenshot_2020-09-10-02-52-00-683_com.rickandmortyrn.jpg" width="300">
+  <img alt="Characters Screen" src="/screenshots/Screenshot_2020-09-10-02-50-59-435_com.rickandmortyrn.jpg" width="250">
+  <img alt="Character Details" src="/screenshots/Screenshot_2020-09-10-02-52-00-683_com.rickandmortyrn.jpg" width="250">
 </p>
 
-![Characters Screen](/screenshots/Screenshot_2020-09-10-02-50-59-435_com.rickandmortyrn.jpg)
+<p align="center">
+  <img alt="Episodes Screen" src="/screenshots/Screenshot_2020-09-10-02-51-10-487_com.rickandmortyrn.jpg" width="250">
+  <img alt="Episode Details" src="/screenshots/Screenshot_2020-09-10-02-51-48-576_com.rickandmortyrn.jpg" width="250">
+</p>
 
-![Character Details](/screenshots/Screenshot_2020-09-10-02-52-00-683_com.rickandmortyrn.jpg
+<p align="center">
+  <img alt="Locations Screen" src="/screenshots/Screenshot_2020-09-10-02-51-18-128_com.rickandmortyrn.jpg" width="250">
+  <img alt="Location Details" src="/screenshots/Screenshot_2020-09-10-02-51-29-670_com.rickandmortyrn.jpg" width="250">
+</p>
 
-![Episodes Screen](/screenshots/Screenshot_2020-09-10-02-51-10-487_com.rickandmortyrn.jpg)
-
-![Episode Details](/screenshots/Screenshot_2020-09-10-02-51-48-576_com.rickandmortyrn.jpg
-
-![Locations Screen](/screenshots/Screenshot_2020-09-10-02-51-18-128_com.rickandmortyrn.jpg)
-
-![Location Details](/screenshots/Screenshot_2020-09-10-02-51-29-670_com.rickandmortyrn.jpg)
