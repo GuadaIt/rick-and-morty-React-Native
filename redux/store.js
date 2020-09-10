@@ -4,14 +4,14 @@ import charactersReducer, { getCharactersAction } from './charactersDuck';
 import locationsReducer, { getLocationsAction } from './locationsDuck';
 import episodesReducer, { getEpisodesAction } from './episodesDuck';
 import filterReducer from './filterDuck';
-import modalReducer from './modalDuck';
+import itemDetailsReducer from './itemDetailsDuck';
 
 const rootReducer = combineReducers({
   characters: charactersReducer,
   episodes: episodesReducer,
   locations: locationsReducer,
   filter: filterReducer,
-  modal: modalReducer
+  itemDetails: itemDetailsReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

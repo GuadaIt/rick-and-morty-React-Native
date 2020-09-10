@@ -1,5 +1,4 @@
 import ApolloClient, { gql } from 'apollo-boost';
-import { array } from 'prop-types';
 
 //constants
 const initialData = {

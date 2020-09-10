@@ -1,64 +1,37 @@
-import React, { useState } from 'react';
-import { StyleSheet, Dimensions, TouchableOpacity, Text, SafeAreaView, View } from 'react-native';
-import { Header, SearchInput, Results } from '../components';
+import React from 'react';
+import { connect } from 'react-redux';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { CharsScreen, EpsScreen, LocationsScreen } from './';
+import { filterAction } from '../redux/filterDuck';
+import PropTypes from 'prop-types';
 
-const MainScreen = () => {
+const Tab = createBottomTabNavigator();
 
-  const filters = ['Characters', 'Episodes', 'Locations'];
-
-  const [currentFilter, setCurrentFilter] = useState('Characters');
+const MainScreen = ({ filterAction }) => {  
+  
+  const tabBarOptions = {
+    activeTintColor: 'white',
+    activeBackgroundColor: '#02b1c8',
+    tabStyle: {
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    labelStyle: {
+      color: 'white',
+      fontSize: 15,
+      fontWeight: 'bold'
+    }
+  };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.top}>      
-        <Header />
-        <SearchInput filter={currentFilter} />     
-        <Results filter={currentFilter} />
-      </View>
-
-
-      <View style={styles.tabsContainer}>
-        {filters.map(filter => {
-          return (
-            <TouchableOpacity style={{
-              ...styles.tabBtn, backgroundColor: filter === currentFilter ? '#02b1c8' : '#242424'}}
-              key={filter}
-              onPress={item => setCurrentFilter(filter)}>
-
-              <Text style={styles.btnTxt}>{filter}</Text>
-            </TouchableOpacity>
-          )
-        })}
-      </View>
-
-    </SafeAreaView>
+    <Tab.Navigator initialRouteName="Characters" tabBarOptions={tabBarOptions}>
+      <Tab.Screen name="Characters" component={CharsScreen} listeners={{ tabPress: () => filterAction('characters')}} />
+      <Tab.Screen name="Episodes" component={EpsScreen} listeners={{ tabPress: () => filterAction('episodes')}} />
+      <Tab.Screen name="Locations" component={LocationsScreen} listeners={{ tabPress: () => filterAction('locations')}} />
+    </Tab.Navigator>
   )
 };
 
-const styles = StyleSheet.create({
-  container: {
-    width: '100%',
-    minHeight: '100%',
-    backgroundColor: '#fafafa'
-  },
-  top: {
-    flex: 1
-  },
-  tabsContainer: {
-    flexDirection: 'row'
-  },
-  tabBtn: {
-    height: 60,
-    width: Dimensions.get('window').width / 3,
-    justifyContent: 'center',
-    alignItems: 'center',
-    alignSelf: 'flex-end'
-  },
-  btnTxt: {
-    color: 'white',
-    fontSize: 17,
-    fontWeight: 'bold'
-  }
-});
+MainScreen.propTypes = { filterAction: PropTypes.func };
 
-export default MainScreen;
+export default connect(null, { filterAction })(MainScreen);

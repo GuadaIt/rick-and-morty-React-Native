@@ -1,5 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { Header } from '../components';
+import PropTypes from 'prop-types';
 
 const StartScreen = ({ navigation }) => {
 
@@ -7,18 +9,23 @@ const StartScreen = ({ navigation }) => {
 
   return (
     <View style={styles.screen}>
-      
-      <View style={styles.titleContainer}>
-        <Text style={styles.title}>React Native Challenge</Text>
-        <Text style={styles.name}>Guada Iturralde</Text>
+
+      <View>
+        <Header />
+
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>React Native Challenge</Text>
+          <Text>By</Text>
+          <Text style={styles.name}>Guada Iturralde</Text>
+        </View>
       </View>
 
       <View style={styles.btnContainer}>
         <TouchableOpacity activeOpacity={0.7} style={styles.button} onPress={enterApp}>
           <Text style={styles.txtBtn}>Enter</Text>
         </TouchableOpacity>
-        
-        <Text style={styles.date}>Date</Text>
+
+        <Text style={styles.date}>September 10, 2020</Text>
       </View>
 
     </View>
@@ -38,12 +45,13 @@ const styles = StyleSheet.create({
   },
   title: {
     textTransform: 'uppercase',
-    fontSize: 25,
-    color: 'white'
+    fontSize: 18,
+    color: 'white',
+    marginVertical: 10,
+    color: '#02b1c8'
   },
   name: {
-    paddingTop: 20,
-    fontSize: 20,
+    fontSize: 15,
     color: 'white'
   },
   btnContainer: {
@@ -65,10 +73,12 @@ const styles = StyleSheet.create({
     fontSize: 18
   },
   date: {
-    marginVertical: 20,
+    marginTop: 20,
     color: 'white',
-    fontSize: 18
+    fontSize: 12
   }
 });
+
+StartScreen.propTypes = { navigation: PropTypes.object };
 
 export default StartScreen;

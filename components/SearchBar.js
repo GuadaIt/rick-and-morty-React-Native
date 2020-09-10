@@ -4,8 +4,10 @@ import { View, StyleSheet, TextInput, Image } from 'react-native';
 import { searchCharAction } from '../redux/charactersDuck';
 import { searchLocAction } from '../redux/locationsDuck';
 import { searchEpAction } from '../redux/episodesDuck';
+import PropTypes from 'prop-types';
+import icon from '../assets/search.png';
 
-const SearchInput = ({ filter, searchCharAction, searchEpAction, searchLocAction }) => {
+const SearchBar = ({ filter, searchCharAction, searchEpAction, searchLocAction }) => {
 
   const searchAction = {
     characters: searchCharAction,
@@ -19,13 +21,13 @@ const SearchInput = ({ filter, searchCharAction, searchEpAction, searchLocAction
     setSearchTerm(text);
     if (searchTerm.length >= 3) {
       searchAction[filter.toLowerCase()]( searchTerm, 'name');
-    }
+    };
   };
 
   return (
     <View style={styles.inputContainer}>
       <View style={styles.container} >
-        <Image style={styles.icon} source={require('../assets/search.png')} />
+        <Image style={styles.icon} source={icon} />
         <View style={styles.input}>
           <TextInput placeholder='Search...'
             onChangeText={handleChangeText}
@@ -40,7 +42,8 @@ const SearchInput = ({ filter, searchCharAction, searchEpAction, searchLocAction
 const styles = StyleSheet.create({
   inputContainer: {
     width: '100%',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginVertical: 30
   },
   container: {
     flexDirection: 'row',
@@ -48,7 +51,6 @@ const styles = StyleSheet.create({
     width: '90%',
     height: 40,
     borderRadius: 5,
-    margin: 10,
     borderWidth: 1,
     borderColor: '#02b1c8'
   },
@@ -65,4 +67,13 @@ const styles = StyleSheet.create({
   }
 });
 
-export default connect(null, { searchCharAction, searchEpAction, searchLocAction })(SearchInput);
+const mapState = state => ({ filter: state.filter.searcher });
+
+SearchBar.propTypes = {
+  filter: PropTypes.string.isRequired,
+  searchCharAction: PropTypes.func,
+  searchEpAction: PropTypes.func,
+  searchLocAction: PropTypes.func
+};
+
+export default connect(mapState, { searchCharAction, searchEpAction, searchLocAction })(SearchBar);

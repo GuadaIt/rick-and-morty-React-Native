@@ -2,9 +2,9 @@ import ApolloClient, { gql } from 'apollo-boost';
 
 //constants
 let initialData = {
-  isVisible: true,
   info: {},
-  fetching: false
+  fetching: false,
+  isOpen: false
 };
 
 const client = new ApolloClient({
@@ -19,15 +19,15 @@ const GET_MODAL_INFO_SUCCESS = 'GET_MODAL_INFO_SUCCESS';
 
 
 //reducer
-const modalReducer = (state = initialData, action) => {
+const itemDetailsReducer = (state = initialData, action) => {
   switch(action.type) {
     case HIDE_MODAL:
-      return { isVisible: false, info: {} }
+      return { info: {}, isOpen: false }
 
     case GET_MODAL_INFO:
-      return { ...state, isVisible: true, fetching: true }
+      return { ...state, fetching: true, isOpen: true }
     case GET_MODAL_INFO_ERR:
-      return { ...state, err: action.payload, fetching: false }
+      return { ...state, err: action.payload, fetching: false, isOpen: false }
     case GET_MODAL_INFO_SUCCESS:
       return { ...state, info: action.payload, fetching: false }     
     default:
@@ -35,12 +35,12 @@ const modalReducer = (state = initialData, action) => {
   };
 };
 
-export default modalReducer;
+export default itemDetailsReducer;
 
 //actions
-export const hideModalAction = () => dispatch => dispatch({ type: HIDE_MODAL });
+export const hideItemDetailsAction = () => dispatch => dispatch({ type: HIDE_MODAL });
 
-export const showModalAction = (id, filter) => dispatch => {
+export const showItemDetailsAction = (id, filter) => dispatch => {
 
   const entity = filter.toLowerCase();
 
