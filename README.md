@@ -44,7 +44,7 @@ Runs the app. You should see it in the emulator.<br />
 ## Issues
 
 - Fix: 
-    - "Two children with the same key warning"
+    - "Two children with the same key" warning
     - Styles on characters screen's cards break when screen is re-focused
 - ToDo:
     - Add choice to search by type or name
