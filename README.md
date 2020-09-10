@@ -16,7 +16,7 @@ Starts Metro, the Javascript bundler. Let it run in its own terminal.
 
 ### `npx react-native run-android`
 
-Runs the app. You should see it in the emulator<br />
+Runs the app. You should see it in the emulator.<br />
 
 ## Screenshots
 
@@ -39,3 +39,14 @@ Runs the app. You should see it in the emulator<br />
   <img alt="Location Details" src="/screenshots/Screenshot_2020-09-10-02-51-29-670_com.rickandmortyrn.jpg" width="250">
 </p>
 
+
+
+## Issues
+
+- Fix: 
+    - "Two children with the same key warning"
+    - Styles on characters screen's cards break when screen is re-focused
+- ToDo:
+    - Add choice to search by type or name
+    - Fire search on input's characters erase
+    - Re-render on screen focus
