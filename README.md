@@ -22,6 +22,11 @@ Runs the app. You should see it in the emulator<br />
 
 ![App Start Screen](/screenshots/Screenshot_2020-09-10-02-50-37-508_com.rickandmortyrn.jpg)
 
+<p align="center">
+  <img src="/screenshots/Screenshot_2020-09-10-02-50-59-435_com.rickandmortyrn.jpg" width="300">
+  <img src="/screenshots/Screenshot_2020-09-10-02-52-00-683_com.rickandmortyrn.jpg" width="300">
+</p>
+
 ![Characters Screen](/screenshots/Screenshot_2020-09-10-02-50-59-435_com.rickandmortyrn.jpg)
 
 ![Character Details](/screenshots/Screenshot_2020-09-10-02-52-00-683_com.rickandmortyrn.jpg
