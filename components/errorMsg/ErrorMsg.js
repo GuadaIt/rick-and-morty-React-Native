@@ -9,15 +9,15 @@ const ErrorMsg = ({ err }) => {
     return (
       <View style={styles.err}>
         <Text style={styles.errTxt}>Server error.</Text>
-      </View>  
+      </View>
     )
-  } else {
-    return (
-      <View style={styles.err}>
-        <Text style={styles.errTxt}>Not found.</Text>
-      </View>  
-    )
-  };  
+  }
+
+  return (
+    <View style={styles.err}>
+      <Text style={styles.errTxt}>Not found.</Text>
+    </View>
+  )
 };
 
 ErrorMsg.propTypes = { err: PropTypes.object.isRequired };
