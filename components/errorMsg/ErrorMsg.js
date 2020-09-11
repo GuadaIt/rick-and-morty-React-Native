@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
+import styles from './errorMsgStyle';
 
 const ErrorMsg = ({ err }) => {
 
@@ -18,16 +19,6 @@ const ErrorMsg = ({ err }) => {
     )
   };  
 };
-
-const styles = StyleSheet.create({
-  err: {
-    alignItems: 'center'
-  },
-  errTxt: {
-    fontSize: 20,
-    color: 'red'
-  }
-})
 
 ErrorMsg.propTypes = { err: PropTypes.object.isRequired };
 

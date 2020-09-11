@@ -1,11 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { StyleSheet, FlatList, View, TouchableOpacity } from 'react-native';
-import { getCharactersAction } from '../redux/charactersDuck';
-import { getLocationsAction } from '../redux/locationsDuck';
-import { getEpisodesAction } from '../redux/episodesDuck';
-import { Card, ErrorMsg, ErroMsg } from './';
+import { FlatList, View, TouchableOpacity } from 'react-native';
+import { getCharactersAction } from '../../redux/charactersDuck';
+import { getLocationsAction } from '../../redux/locationsDuck';
+import { getEpisodesAction } from '../../redux/episodesDuck';
+import Card from '../card/Card';
+import ErrorMsg from '../errorMsg/ErrorMsg';
 import PropTypes from 'prop-types';
+import styles from './resultsStyle';
 
 const Results = ({ filter, characters, episodes, locations, getCharactersAction, getEpisodesAction, getLocationsAction }) => {
 
@@ -50,26 +52,11 @@ const Results = ({ filter, characters, episodes, locations, getCharactersAction,
         onEndReachedThreshold={1}
         onEndReached={currentTab.next ? handleEndReach : ''} 
         style={styles.list}/>
-        : <ErroMsg err={currentTab.err} />
+        : <ErrorMsg err={currentTab.err} />
       }
     </View>
   )
 };
-
-const styles = StyleSheet.create({
-  spinnerContainer: {
-    height: '100%',
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  contentContainer: {
-    alignItems: 'center'
-  },
-  list: {
-    marginBottom: 100
-  }
-});
 
 const mapState = state => ({
   filter: state.filter.searcher,

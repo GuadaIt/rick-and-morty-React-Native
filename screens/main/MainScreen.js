@@ -1,8 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { CharsScreen, EpsScreen, LocationsScreen } from './';
-import { filterAction } from '../redux/filterDuck';
+import CharsScreen from '../CharsScreen';
+import EpsScreen from '../EpsScreen';
+import LocationsScreen from '../LocationsScreen';
+import { filterAction } from '../../redux/filterDuck';
 import PropTypes from 'prop-types';
 
 const Tab = createBottomTabNavigator();

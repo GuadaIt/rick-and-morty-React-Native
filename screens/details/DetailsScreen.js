@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { View, StyleSheet, Text, Image, FlatList, ActivityIndicator, TouchableOpacity, BackHandler } from 'react-native';
-import { hideItemDetailsAction } from '../redux/itemDetailsDuck';
-import { Card } from '../components';
+import { View, Text, Image, FlatList, ActivityIndicator, TouchableOpacity, BackHandler } from 'react-native';
+import { hideItemDetailsAction } from '../../redux/itemDetailsDuck';
+import { Card } from '../../components';
 import PropTypes from 'prop-types';
+import styles from './detailsScreenStyle';
 
 const DetailsScreen = ({ itemDetails, navigation, hideItemDetailsAction }) => {
 
@@ -134,72 +135,6 @@ const DetailsScreen = ({ itemDetails, navigation, hideItemDetailsAction }) => {
     )
   };
 };
-
-const styles = StyleSheet.create({
-  spinnerContainer: {
-    height: '100%',
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  container: {
-    paddingTop: 70,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  detailsContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 5
-  },
-  underlined: {
-    borderBottomColor: '#02b1c8',
-    borderBottomWidth: 3,
-    marginRight: 10
-  },
-  txt: {
-    fontSize: 20,
-  },
-  notUnderlined: {
-    borderBottomColor: 'transparent',
-    borderBottomWidth: 3,
-  },
-  name: {
-    textAlign: 'center',
-    maxWidth: '60%',
-    fontSize: 25,
-    color: '#02b1c8'
-  },
-  title: {
-    alignSelf: 'center',
-    fontSize: 20,
-    marginVertical: 8,
-    color: 'white'
-  },
-  btn: {
-    color: 'white',
-    width: 40,
-    height: 40,
-    backgroundColor: '#02b1c8',
-    alignItems: 'center',
-    justifyContent: 'center',
-    position: 'absolute',
-    top: 15,
-    left: 15,
-    borderRadius: 10
-  },
-  btnTxt: {
-    fontSize: 20
-  },
-  imgContainer: {
-    marginVertical: 30
-  },
-  img: {
-    width: 300,
-    height: 300
-  }
-});
 
 const mapState = state => ({ itemDetails: state.itemDetails });
 

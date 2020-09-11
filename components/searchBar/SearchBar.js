@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { View, StyleSheet, TextInput, Image } from 'react-native';
-import { searchCharAction } from '../redux/charactersDuck';
-import { searchLocAction } from '../redux/locationsDuck';
-import { searchEpAction } from '../redux/episodesDuck';
+import { View, TextInput, Image } from 'react-native';
+import { searchCharAction } from '../../redux/charactersDuck';
+import { searchLocAction } from '../../redux/locationsDuck';
+import { searchEpAction } from '../../redux/episodesDuck';
 import PropTypes from 'prop-types';
-import icon from '../assets/search.png';
+import icon from '../../assets/search.png';
+import styles from './searchBarStyle';
 
 const SearchBar = ({ filter, searchCharAction, searchEpAction, searchLocAction }) => {
 
@@ -38,34 +39,6 @@ const SearchBar = ({ filter, searchCharAction, searchEpAction, searchLocAction }
     </View>
   )
 };
-
-const styles = StyleSheet.create({
-  inputContainer: {
-    width: '100%',
-    alignItems: 'center',
-    marginVertical: 30
-  },
-  container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    width: '90%',
-    height: 40,
-    borderRadius: 5,
-    borderWidth: 1,
-    borderColor: '#02b1c8'
-  },
-  icon: {
-    padding: 10,
-    marginHorizontal: 10,
-    height: 25,
-    width: 25,
-    resizeMode: 'stretch',
-    alignItems: 'center',
-  },
-  input: {
-    color: 'white'
-  }
-});
 
 const mapState = state => ({ filter: state.filter.searcher });
 

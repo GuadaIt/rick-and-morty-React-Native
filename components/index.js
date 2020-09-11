@@ -1,5 +1,3 @@
-export { default as Header } from './Header';
-export { default as SearchBar } from './SearchBar';
-export { default as Card } from './Card';
-export { default as Results } from './Results';
-export { default as ErroMsg } from './ErrorMsg';
+export { default as Header } from './header/Header';
+export { default as SearchBar } from './searchBar/SearchBar';
+export { default as Results } from './results/Results';
