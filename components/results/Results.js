@@ -36,7 +36,7 @@ const Results = ({ filter, characters, episodes, locations, getCharactersAction,
 
   const onPress = id => navigation.navigate('Details', { id });
   const handleEndReach = () => currentTab.loadMore(currentTab.next);
-  
+
   const renderItem = ({ item }) => (
     <TouchableOpacity style={styles.card} onPress={item => onPress(item.id)}>
       <Card info={item} />
@@ -45,14 +45,14 @@ const Results = ({ filter, characters, episodes, locations, getCharactersAction,
 
   return (
     <View>
-      {!currentTab.err ?
-      <FlatList data={currentTab.array}
-        renderItem={renderItem}
-        contentContainerStyle={styles.contentContainer}
-        onEndReachedThreshold={1}
-        onEndReached={currentTab.next ? handleEndReach : ''} 
-        style={styles.list}/>
-        : <ErrorMsg err={currentTab.err} />
+      {currentTab.err ?
+        <ErrorMsg err={currentTab.err} />
+        : <FlatList data={currentTab.array}
+          renderItem={renderItem}
+          contentContainerStyle={styles.contentContainer}
+          onEndReachedThreshold={1}
+          onEndReached={currentTab.next ? handleEndReach : ''}
+          style={styles.list} />
       }
     </View>
   )
@@ -67,11 +67,11 @@ const mapState = state => ({
 
 Results.propTypes = {
   filter: PropTypes.string.isRequired,
-  characters: PropTypes.object.isRequired, 
-  episodes: PropTypes.object.isRequired, 
-  locations: PropTypes.object.isRequired, 
-  getCharactersAction: PropTypes.func, 
-  getEpisodesAction: PropTypes.func, 
+  characters: PropTypes.object.isRequired,
+  episodes: PropTypes.object.isRequired,
+  locations: PropTypes.object.isRequired,
+  getCharactersAction: PropTypes.func,
+  getEpisodesAction: PropTypes.func,
   getLocationsAction: PropTypes.func
 };
 
