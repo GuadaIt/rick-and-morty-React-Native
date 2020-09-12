@@ -20,7 +20,7 @@ const Card = ({ info, itemDetailsIsOpen, showItemDetailsAction }) => {
     switch (info.__typename) {
       case 'Character':
         return (
-          <TouchableOpacity style={styles.card} onPress={() => onPress(info.id)} key={info.id}>
+          <TouchableOpacity style={styles.card} onPress={() => onPress(info.id)} key={info.name}>
             <View style={styles.imgContainer}>
               <Image style={styles.img} source={{ uri: info.image }} />
             </View>
@@ -31,7 +31,7 @@ const Card = ({ info, itemDetailsIsOpen, showItemDetailsAction }) => {
         )
       case 'Episode':
         return (
-          <TouchableOpacity style={styles.card} onPress={() => onPress(info.id)} key={info.id}>
+          <TouchableOpacity style={styles.card} onPress={() => onPress(info.id)} key={info.name}>
             <View style={styles.nameContainer}>
               <Text style={styles.episodeName}>{info.name}</Text>
             </View>
@@ -40,7 +40,7 @@ const Card = ({ info, itemDetailsIsOpen, showItemDetailsAction }) => {
         )
       case 'Location':
         return (
-          <TouchableOpacity style={styles.card} onPress={() => onPress(info.id)} key={info.id}>
+          <TouchableOpacity style={styles.card} onPress={() => onPress(info.id)} key={info.name}>
             <View style={styles.nameContainer}>
               <Text style={styles.episodeName}>{info.name}</Text>
             </View>
@@ -54,7 +54,7 @@ const Card = ({ info, itemDetailsIsOpen, showItemDetailsAction }) => {
         )
       default:
         return (
-          <TouchableOpacity style={styles.card} onPress={() => onPress(info.id)} key={info.id}>
+          <TouchableOpacity style={styles.card} onPress={() => onPress(info.id)} key={info.name}>
             <Text>{info.name}</Text>
           </TouchableOpacity>
         )

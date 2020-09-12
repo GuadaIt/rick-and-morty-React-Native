@@ -1,9 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import CharsScreen from '../CharsScreen';
-import EpsScreen from '../EpsScreen';
-import LocationsScreen from '../LocationsScreen';
+import TabScreen from '../TabScreen/TabScreen';
 import { filterAction } from '../../redux/filterDuck';
 import PropTypes from 'prop-types';
 
@@ -27,9 +25,9 @@ const MainScreen = ({ filterAction }) => {
 
   return (
     <Tab.Navigator initialRouteName="Characters" tabBarOptions={tabBarOptions}>
-      <Tab.Screen name="Characters" component={CharsScreen} listeners={{ tabPress: () => filterAction('characters')}} />
-      <Tab.Screen name="Episodes" component={EpsScreen} listeners={{ tabPress: () => filterAction('episodes')}} />
-      <Tab.Screen name="Locations" component={LocationsScreen} listeners={{ tabPress: () => filterAction('locations')}} />
+      <Tab.Screen name="Characters" component={TabScreen} listeners={{ tabPress: () => filterAction('characters')}} />
+      <Tab.Screen name="Episodes" component={TabScreen} listeners={{ tabPress: () => filterAction('episodes')}} />
+      <Tab.Screen name="Locations" component={TabScreen} listeners={{ tabPress: () => filterAction('locations')}} />
     </Tab.Navigator>
   )
 };

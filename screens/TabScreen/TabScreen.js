@@ -1,12 +1,12 @@
 import React from 'react';
 import { View } from 'react-native';
-import { SearchBar, Results } from '../components';
+import { SearchBar, Results } from '../../components';
 
-const CharsScreen = () => (
+const TabScreen = () => (
   <View>
     <SearchBar />
     <Results />
   </View>
 );
 
-export default CharsScreen;
+export default TabScreen;

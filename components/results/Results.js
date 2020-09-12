@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { FlatList, View, TouchableOpacity } from 'react-native';
+import { FlatList, View } from 'react-native';
 import { getCharactersAction } from '../../redux/charactersDuck';
 import { getLocationsAction } from '../../redux/locationsDuck';
 import { getEpisodesAction } from '../../redux/episodesDuck';
@@ -34,14 +34,9 @@ const Results = ({ filter, characters, episodes, locations, getCharactersAction,
 
   const currentTab = tabsActionsInfo[filter.toLowerCase()];
 
-  const onPress = id => navigation.navigate('Details', { id });
   const handleEndReach = () => currentTab.loadMore(currentTab.next);
 
-  const renderItem = ({ item }) => (
-    <TouchableOpacity style={styles.card} onPress={item => onPress(item.id)}>
-      <Card info={item} />
-    </TouchableOpacity>
-  );
+  const renderItem = ({ item }) => <Card info={item} />;
 
   return (
     <View>
